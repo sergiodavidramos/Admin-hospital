@@ -22,11 +22,17 @@ import { FormsModule } from '@angular/forms';
 // temporal
 // import { FormsModule } from '@angular/forms';
 
+// servicios
+import { ServiceModule } from './services/service.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    
     // GraficoDonaComponent,
     // IncrementadorComponent,
   ],
@@ -36,7 +42,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
