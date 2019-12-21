@@ -8,10 +8,12 @@
     <nav class="sidebar-nav">
       <ul id="sidebarnav">
         <li class="user-profile">
-          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img
-              src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs </span></a>
+          <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+            <img [src]="usuario.img | imagen" alt="user" />
+            <span class="hide-menu">{{usuario.nombre}} </span>
+          </a>
           <ul aria-expanded="false" class="collapse">
-            <li><a href="javascript:void()">My Profile </a></li>
+            <li><a routerLinkActive="active" routerLink="/perfil">Mi perfil </a></li>
             <li><a href="javascript:void()">My Balance</a></li>
             <li><a href="javascript:void()">Inbox</a></li>
             <li><a routerLinkActive="active" routerLink="/account-settings">Account Setting</a></li>
@@ -28,7 +30,8 @@
 
           <ul aria-expanded="false" class="collapse">
 
-            <li *ngFor="let submenu of menu.submenu"><a routerLinkActive="active" [routerLink]="[ submenu.url ]">{{submenu.titulo}} </a></li>
+            <li *ngFor="let submenu of menu.submenu"><a routerLinkActive="active"
+                [routerLink]="[ submenu.url ]">{{submenu.titulo}} </a></li>
             <!-- <li><a href="index2.html">Analytical</a></li>
             <li><a href="index3.html">Demographical</a></li>
             <li><a href="index4.html">Modern</a></li> -->
