@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubirArchivoService } from 'src/app/services/service.index';
 import { ModalUploadService } from './modal-upload.service';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-modal-upload',
@@ -11,7 +12,7 @@ export class ModalUploadComponent implements OnInit {
 
 
   imagenSubir : File;
-  imagenTemp: File;
+  imagenTemp: any;
 
   constructor(
     public _subirArchivoService: SubirArchivoService,
@@ -57,7 +58,7 @@ export class ModalUploadComponent implements OnInit {
   subirImagen(){
     this._subirArchivoService.subirArchivo(this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id)
           .then(resp=>{
-            console.log(resp);
+            // console.log(resp);
             
             this._modalUploadService.notificacion.emit(resp);
             this.cerrarModal();

@@ -33,7 +33,7 @@ export class RxjsComponent implements OnInit, OnDestroy {
 
 
   regresaObservable(): Observable<any> {
-    return new Observable((observer: Subscriber<any>) => {
+    return new Observable((observer: Subscriber<any>) => {  
 
       let contador = 0;
 
