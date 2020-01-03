@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UsuarioService } from '../services/service.index';
 import { Usuario } from '../models/usuario.model';
+import swal from 'sweetalert';
 
 declare function init_plugins();
 
@@ -76,7 +77,9 @@ export class LoginComponent implements OnInit {
     let usuario = new Usuario(null, forma.value.email, forma.value.password);
 
     this._usuarioServices.login(usuario, forma.value.recuerdame)
-          .subscribe(correcto => this.router.navigate(['/dashboard']))
+          .subscribe(correcto => this.router.navigate(['/dashboard']),
+                      err=> swal('Error en el Login', err.error.mensaje,'error')
+                      )
     // console.log(forma.valid);
     // console.log(forma.value);
     // this.router.navigate(['/dashboard'])

@@ -81,7 +81,8 @@ sonIguales(campo1: string, campo2: string){
             .subscribe(resp=>{
               console.log(resp);
               this.router.navigate(['/login']);
-            })
+            },
+            err=> swal('Error en el Login', err.error.mensaje,'error'))
   }
 
 }
