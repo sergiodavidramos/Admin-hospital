@@ -82,7 +82,7 @@ sonIguales(campo1: string, campo2: string){
               console.log(resp);
               this.router.navigate(['/login']);
             },
-            err=> swal('Error en el Login', err.error.mensaje,'error'))
+            err=> swal(err.error.mensaje, err.error.errors.message,'error'))
   }
 
 }
